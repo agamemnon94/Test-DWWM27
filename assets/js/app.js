@@ -15,6 +15,11 @@
 // } 
 let countryBox = document.querySelector('.country_box');
 
+/**
+ * Fonction qui fait apparaître les pays dont la langue officielle est le français.
+ */
+// Version par Pierre
+
 // function countriesLanguages() {
 //   fetch('https://restcountries.com/v3.1/all')
 //     .then(response => response.json())
@@ -38,6 +43,8 @@ let countryBox = document.querySelector('.country_box');
 // countriesLanguages();
 
 
+
+// Ma version
 function countriesLanguages() {
 
   fetch('https://restcountries.com/v3.1/all')
