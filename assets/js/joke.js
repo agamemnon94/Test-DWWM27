@@ -36,33 +36,49 @@ if (darkCat) {
   jokeUrl = '/Custom,Christmas';
 }
 
-
-
-
-
-
-
-
-
 function getJoke() {
 
   fetch(` https://v2.jokeapi.dev/joke${jokeUrl}`)
-    .then(response => response.json()
-      .then(response => {
+    .then(response => response.json())
+    .then(response => {
 
-        console.log(response);
-        // let joke=document.createElement('div');
-        jokes.innerHTML = `<p>${response.setup}</p>`;
+      console.log(response);
 
-        btn1.addEventListener('click', () => {
+      switch (response.type) {
 
-          jokes.innerHTML += `<p>${response.delivery}</p>`;
-        })
+        case 'single':
+          jokes.innerHTML = `<p>${response.setup}</p>`;
+          console.log(response.setup);
+          break;
 
-      }))
+        case 'twopart':
+          jokes.innerHTML = `<p>${response.setup}</p>`;
+          console.log(response.setup);
+          jokes.innerHTML += `<p>${response.delivery}</p>`
+          console.log(response.delivery);
+          break;
+
+        default:
+          console.log('Erreur :  Type non reconnu');
+          break;
+      }
+
+
+      // let joke=document.createElement('div');
+      // jokes.innerHTML = `<p>${response.setup}</p>`;
+
+
+
+
+
+      // btn1.addEventListener('click', () => {
+
+      //   jokes.innerHTML += `<p>${response.delivery}</p>`;
+      // })
+
+    })
 }
 
 btn2.addEventListener('click', () => {
-
   getJoke();
 })
