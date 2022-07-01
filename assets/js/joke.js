@@ -13,31 +13,31 @@ let Pun = document.getElementById('Pun');
 let spooky = document.getElementById('spooky');
 let christmas = document.getElementById('christmas');
 
-let darkCat = dark.checked;
-let progCat = prog.checked;
-let miscCat = misc.checked;
-let PunCat = Pun.checked;
-let spookyCat = spooky.checked;
-let christmasCat = christmas.checked;
+// let darkCat = dark.checked;
+// let progCat = prog.checked;
+// let miscCat = misc.checked;
+// let PunCat = Pun.checked;
+// let spookyCat = spooky.checked;
+// let christmasCat = christmas.checked;
 
 let jokeUrl = ('/Any');
 
-if (darkCat) {
-  jokeUrl = '/Custom,Dark';
-} if (progCat) {
-  jokeUrl = '/Custom,Programming';
-} if (miscCat) {
-  jokeUrl = '/Custom,Misc';
-} if (PunCat) {
-  jokeUrl = '/Custom,Pun';
-} if (spookyCat) {
-  jokeUrl = '/Custom,Spooky';
-} if (christmasCat) {
-  jokeUrl = '/Custom,Christmas';
-}
+// if (darkCat) {
+//   jokeUrl = '/Custom,Dark';
+// } if (progCat) {
+//   jokeUrl = '/Custom,Programming';
+// } if (miscCat) {
+//   jokeUrl = '/Custom,Misc';
+// } if (PunCat) {
+//   jokeUrl = '/Custom,Pun';
+// } if (spookyCat) {
+//   jokeUrl = '/Custom,Spooky';
+// } if (christmasCat) {
+//   jokeUrl = '/Custom,Christmas';
+// }
 
 function getJoke() {
-
+  jokes.innerHTML = '';
   fetch(` https://v2.jokeapi.dev/joke${jokeUrl}`)
     .then(response => response.json())
     .then(response => {
@@ -63,20 +63,8 @@ function getJoke() {
           break;
       }
 
-
-      // let joke=document.createElement('div');
-      // jokes.innerHTML = `<p>${response.setup}</p>`;
-
-
-
-
-
-      // btn1.addEventListener('click', () => {
-
-      //   jokes.innerHTML += `<p>${response.delivery}</p>`;
-      // })
-
     })
+    .catch(err => console.error(err));
 }
 
 btn2.addEventListener('click', () => {
