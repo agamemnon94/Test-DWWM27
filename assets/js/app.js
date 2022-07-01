@@ -1,6 +1,6 @@
-// window.addEventListener('load', () => {
-//   document.body.classList.remove("clean__transition");
-// })
+window.addEventListener('load', () => {
+  document.body.classList.remove("clean__transition");
+})
 
 // function compterMot() {
 //   var mots = document.getElementById("textarea").value;
